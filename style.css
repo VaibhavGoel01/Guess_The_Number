@@ -1,0 +1,123 @@
+:root{
+  --bg:#f2f6f9;
+  --card:#ffffff;
+  --accent:#2b8aef;
+  --accent-600:#1670d3;
+  --muted:#6b7280;
+  --success:#16a34a;
+  --danger:#ef4444;
+  --radius:12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background:linear-gradient(180deg,#eef6ff 0%, var(--bg) 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+  color:#0f172a;
+}
+
+.container{
+  width:100%;
+  max-width:720px;
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:0 8px 30px rgba(12,18,31,0.08);
+  padding:28px;
+}
+
+h1{margin:0 0 8px 0;font-size:1.6rem}
+.instructions{margin:0 0 12px;color:var(--muted)}
+.legend{margin:0 0 18px 0;padding-left:1.15rem;color:var(--muted)}
+.legend li{margin-bottom:6px}
+
+.controls{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-bottom:12px;
+}
+#guessInput{
+  flex:1;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #d1d5db;
+  font-size:1rem;
+  outline:none;
+}
+#guessInput:focus{box-shadow:0 0 0 4px rgba(43,138,239,0.12);border-color:var(--accent-600)}
+
+button{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:10px 14px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+}
+button.secondary{
+  background:#f3f4f6;
+  color:#111827;
+  border:1px solid #e5e7eb;
+}
+button:disabled{opacity:0.6;cursor:not-allowed}
+
+.message{min-height:1.4rem;margin:8px 0;color:var(--muted)}
+
+.status{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  margin-bottom:16px;
+  color:var(--muted);
+}
+.reveal{font-weight:700;color:var(--accent-600)}
+
+.history{
+  margin-top:6px;
+}
+.history-list{
+  list-style:none;
+  padding:0;
+  margin:12px 0 0 0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  max-height:300px;
+  overflow:auto;
+}
+.history-item{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #eef2f7;
+  background:linear-gradient(180deg,#ffffff, #fbfdff);
+  font-family:monospace;
+  font-size:0.95rem;
+}
+.guess-value{min-width:88px}
+.meta{color:var(--muted);font-size:0.88rem}
+
+.key-badge{
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#eef2ff;
+  color:var(--accent-600);
+  font-weight:600;
+  margin-right:6px;
+  font-family:inherit;
+  font-size:0.85rem;
+}
+
+.footer{margin-top:18px;color:var(--muted);font-size:0.85rem}
+.correct{color:var(--success)}
+.wrong{color:var(--danger)}

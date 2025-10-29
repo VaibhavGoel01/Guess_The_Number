@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guess the 5-Digit Number</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Guess the 5‑Digit Number</h1>
+    <p class="instructions">
+      I picked a random 5-digit number (10000–99999). Enter a 5-digit guess. After each guess you'll see:
+    </p>
+    <ul class="legend">
+      <li><strong>Digits present:</strong> digits from your guess that appear anywhere in the secret number.</li>
+      <li><strong>Correct positions:</strong> digits that are in the exact same place as in the secret number.</li>
+    </ul>
+
+    <div class="controls">
+      <input id="guessInput" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="Enter 5 digits" />
+      <button id="guessBtn">Guess</button>
+      <button id="restartBtn" class="secondary">Restart</button>
+    </div>
+
+    <p id="message" class="message"></p>
+
+    <section class="status">
+      <div>Attempts: <span id="attempts">0</span></div>
+      <div id="reveal" class="reveal" aria-live="polite"></div>
+    </section>
+
+    <section class="history">
+      <h2>History</h2>
+      <ul id="historyList" class="history-list" aria-live="polite"></ul>
+    </section>
+
+    <footer class="footer">
+      Tip: press Enter to submit. Leading zeros are not allowed in the secret number.
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
